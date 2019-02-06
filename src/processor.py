@@ -19,11 +19,11 @@ class Processor:
         if flag == 'image':
             filter, kwargs = self.ip.menu(self.filters, image.mode)
             print('Processing...')
-            result = filter.function(image, **kwargs)
+            result = self._apply_filter(filter.function, image, **kwargs)
 
         elif image.mode in self.filters[flag].types:
             print('Processing...')
-            result = self.filters[flag].function(image, *args_argparse[1:])
+            result = self._apply_filter(self.filters[flag].function, image, *args_argparse[1:])
 
         else:
             print('Error')
@@ -37,3 +37,7 @@ class Processor:
             name = self.im.gen_file_name(file_name, complement)
             print(f'Saving {name}...')
             self.im.write_image(image, name)
+
+    def _apply_filter(self, function, image, *args, **kwargs):
+        """ If needed some pre-processing in image """
+        return function(image, *args, **kwargs)
