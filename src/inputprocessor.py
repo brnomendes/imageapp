@@ -7,7 +7,8 @@ class InputProcessor:
     def menu(self, filters, image_mode):
         print('This is an Image App\n')
 
-        possibles = [filters[flag] for flag in filters if image_mode in filters[flag].types]
+        possibles = [filters[flag] for flag in filters
+                     if image_mode in filters[flag].types]
 
         if not possibles:
             print('Not avaliable filters')
