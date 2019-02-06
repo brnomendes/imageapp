@@ -12,8 +12,8 @@ if __name__ == "__main__":
     group.add_argument('--image', metavar='image', help='Help')
 
     for flag in register.filters:
-        filter_args = register.filters[flag]['args']
-        group.add_argument(f'--{flag}', metavar=tuple(filter_args), nargs=len(filter_args), help=register.filters[flag]['help'])
+        filter_args = register.filters[flag].args
+        group.add_argument(f'--{flag}', metavar=tuple(filter_args), nargs=len(filter_args), help=register.filters[flag].help)
 
     for flag, args in vars(parser.parse_args()).items():
         if args is not None:

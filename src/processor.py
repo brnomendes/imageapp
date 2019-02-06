@@ -18,10 +18,10 @@ class Processor:
 
         if flag == 'image':
             choice_flag, kwargs = self.ip.menu(self.filters, image.mode)
-            result = self.filters[choice_flag]['function'](image, **kwargs)
+            result = self.filters[choice_flag].function(image, **kwargs)
 
-        elif image.mode in self.filters[flag]['types']:
-            result = self.filters[flag]['function'](image, *args[1:])
+        elif image.mode in self.filters[flag].types:
+            result = self.filters[flag].function(image, *args[1:])
 
         else:
             print('Error')

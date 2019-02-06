@@ -1,6 +1,17 @@
 import inspect
 
 
+class Filter:
+
+    def __init__(self, flag, function, args, name, types, help):
+        self.flag = flag
+        self.function = function
+        self.args = args
+        self.name = name
+        self.types = types
+        self.help = help
+
+
 class FilterRegister:
 
     def get_register(self):
@@ -13,12 +24,7 @@ class FilterRegister:
             """ Verifcations """
             def _wrapper(function):
 
-                filters[function.__name__] = {}
-                filters[function.__name__]['function'] = function
-                filters[function.__name__]['args'] = list(inspect.signature(function).parameters.keys())
-                filters[function.__name__]['name'] = name
-                filters[function.__name__]['types'] = types
-                filters[function.__name__]['help'] = help
+                filters[function.__name__] = Filter(function.__name__, function, list(inspect.signature(function).parameters.keys()), name, types, help)
 
                 return function
             return _wrapper
