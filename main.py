@@ -1,4 +1,4 @@
-from src.app import App
+from src.app import ImageApp
 
 if __name__ == "__main__":
-    App().start()
+    ImageApp().start()

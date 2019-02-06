@@ -5,7 +5,7 @@ from .processor import Processor
 from .filters import register
 
 
-class App:
+class ImageApp:
 
     def start(self):
         parser = argparse.ArgumentParser(
