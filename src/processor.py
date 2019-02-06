@@ -9,19 +9,21 @@ class Processor:
         self.im = ImageManipulator()
         self.ip = InputProcessor()
 
-    def start(self, flag, args):
-        if not isinstance(args, list):
-            args = [args]
+    def start(self, flag, args_argparser):
+        if not isinstance(args_argparser, list):
+            args_argparser = [args_argparser]
 
-        file_name = args[0]
+        file_name = args_argparser[0]
         image = self.im.read_image(file_name)
 
         if flag == 'image':
-            choice_flag, kwargs = self.ip.menu(self.filters, image.mode)
-            result = self.filters[choice_flag].function(image, **kwargs)
+            filter, kwargs = self.ip.menu(self.filters, image.mode)
+            print('Processing...')
+            result = filter.function(image, **kwargs)
 
         elif image.mode in self.filters[flag].types:
-            result = self.filters[flag].function(image, *args[1:])
+            print('Processing...')
+            result = self.filters[flag].function(image, *args_argparser[1:])
 
         else:
             print('Error')

@@ -15,6 +15,6 @@ if __name__ == "__main__":
         filter_args = register.filters[flag].args
         group.add_argument(f'--{flag}', metavar=tuple(filter_args), nargs=len(filter_args), help=register.filters[flag].help)
 
-    for flag, args in vars(parser.parse_args()).items():
-        if args is not None:
-            Processor(register.filters).start(flag, args)
+    for flag, args_argparser in vars(parser.parse_args()).items():
+        if args_argparser is not None:
+            Processor(register.filters).start(flag, args_argparser)

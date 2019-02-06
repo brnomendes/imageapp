@@ -7,20 +7,20 @@ class InputProcessor:
     def menu(self, filters, image_mode):
         print('This is an Image App\n')
 
-        possibles = [filters[f] for f in filters if image_mode in filters[f].types]
+        possibles = [filters[flag] for flag in filters if image_mode in filters[flag].types]
 
         if not possibles:
             print('Not avaliable filters')
             exit(0)
 
         choice_index = self._choice_a_filter(possibles)
-        choice_flag = possibles[choice_index].flag
+        filter = possibles[choice_index]
 
-        print(f'\nSelected Filter: {filters[choice_flag].name}\n')
+        print(f'\nSelected Filter: {filter.name}\n')
 
-        kwargs = self._get_filter_args(filters[choice_flag])
+        kwargs = self._get_filter_args(filter)
 
-        return choice_flag, kwargs
+        return filter, kwargs
 
     def _choice_a_filter(self, possibles):
         """ Return 'possibles' index for the choice """
