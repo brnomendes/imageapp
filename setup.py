@@ -8,7 +8,7 @@ setup(
     author_email='brunoms.50@gmail.com',
     python_requires='>=3.6.0',
     packages=find_packages(),
-    install_requires=['Pillow', 'pytest'],
+    install_requires=['Pillow', 'pytest', 'numpy'],
     include_package_data=True,
     license='MIT',
 )

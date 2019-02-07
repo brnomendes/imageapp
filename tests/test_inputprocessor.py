@@ -14,9 +14,9 @@ def test_get_filter_args(input_processor):
     filter = Filter(None, None, None, None)
     filter.args = ['image', 'x', 'y', 'z']
 
-    with mock.patch('builtins.input', side_effect=['01', '02', 5]):
+    with mock.patch('builtins.input', side_effect=['ab', '02', 5]):
         kwargs = input_processor._get_filter_args(filter)
-        assert kwargs == {'x': '01', 'y': '02', 'z': 5}
+        assert kwargs == {'x': 'ab', 'y': '02', 'z': 5}
 
 
 def test_choice_a_filter(input_processor):
@@ -25,6 +25,9 @@ def test_choice_a_filter(input_processor):
 
     possibles = [f1, f2]
 
-    with mock.patch('builtins.input', side_effect=[2]):
+    with mock.patch('builtins.input', side_effect=[1, 2]):
+        index = input_processor._choice_a_filter(possibles)
+        assert possibles[index].name == 'F1'
+
         index = input_processor._choice_a_filter(possibles)
         assert possibles[index].name == 'F2'

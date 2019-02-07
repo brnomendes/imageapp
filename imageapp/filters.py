@@ -1,4 +1,4 @@
-from .implementations import blurfilter, rgbdecomposition, puttext
+from .implementations import blurfilter, rgbdecomposition, rotateimage
 from .filterregister import register
 
 
@@ -12,6 +12,6 @@ def rgb(image):
     return rgbdecomposition.run(image)
 
 
-@register(name='Put Text', types=['RGB'], help='Put text in position x,y in the image')
-def text(image, x, y, text_to_put, color):
-    return puttext.run(image, int(x), int(y), text_to_put, color)
+@register(name='Rotate Image', types=['RGB'], help='Image rotated according to angle in degrees clockwise around its center')
+def rotate(image, angle_degrees):
+    return rotateimage.run(image, int(angle_degrees))
