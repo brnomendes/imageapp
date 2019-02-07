@@ -5,41 +5,36 @@
 
 `imageapp/implementations/`
 
-`imageapp/implementations/puttext.py`
+`imageapp/implementations/rotateimage.py`
 
 ```python
-from PIL import ImageDraw
-
-
-def run(image, x, y, text_to_put, color):
-    draw = ImageDraw.Draw(image)
-
-    draw.text((x, y), text_to_put, color)
-    return {'text': image}
+def run(image, angle):
+    return {f'rotate{angle}': image.rotate(angle)}
 ```
 
 `imageapp/filters.py`
 
 ```python
-from .implementations import puttext
+from .implementations import rotateimage
 from .filterregister import register
 
-@register(name='Put Text', types=['RGB'], help='Put text in position x,y in the image')
-def text(image, x, y, text_to_put, color):
-    return puttext.run(image, int(x), int(y), text_to_put, color)
+@register(name='Rotate Image', types=['RGB'], help='Rotates the input image clockwise according to the angle.')
+def rotate(image, angle_degrees):
+    return rotateimage.run(image, int(angle_degrees))
 ```
 
 ```
 $ python main.py --help
-usage: main.py [-h] (--image image | --text image x y text_to_put color)
+usage: main.py [-h] (--image image | --rotate image angle_degrees)
 
 An app to process images.
 
 optional arguments:
   -h, --help            show this help message and exit
-  --image image         Help
-  --text image x y text_to_put color
-                        Put text in position x,y in the image
+  --image image         Shows the available filters for the input image.
+  --rotate image angle_degrees
+                        Rotates the input image clockwise according to the
+                        angle.
 ```
 
 ```
@@ -47,18 +42,15 @@ $ python main.py --image data/test-image.png
 This is an Image App
 
 Avaliable Filters:
-1 - Put Text
+1 - Rotate Image
 
-Type the selected filter number: 1 # User Input
+Type the selected filter number: 1   # user input
 
-Selected Filter: Put Text
+Selected Filter: Rotate Image
 
-Type the X: 5                      # User Input
-Type the Y: 5                      # User Input
-Type the Text To Put: Hello        # User Input
-Type the Color: black              # User Input
+Type the Angle Degrees: 45           # user input
 Processing...
 
 Image file processed successfully!
-Saving data/test-image-text.png...
+Saving data/test-image-rotate45.png...
 ```
