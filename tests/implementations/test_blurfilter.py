@@ -27,17 +27,17 @@ def test_convolution_radius5_weight5(image2, compare_images):
 
 
 def test_pixel_exists():
-    assert blurfilter._pixel_exists(0, 4, 5, 5) == True
+    assert blurfilter._pixel_exists(0, 4, 5, 5) is True
 
 
 def test_pixel_exists_negative():
-    assert blurfilter._pixel_exists(-1, 4, 5, 5) == False
-    assert blurfilter._pixel_exists(4, -1, 5, 5) == False
+    assert blurfilter._pixel_exists(-1, 4, 5, 5) is False
+    assert blurfilter._pixel_exists(4, -1, 5, 5) is False
 
 
 def test_pixel_exists_overflow():
-    assert blurfilter._pixel_exists(0, 4, 4, 4) == False
-    assert blurfilter._pixel_exists(4, 0, 4, 4) == False
+    assert blurfilter._pixel_exists(0, 4, 4, 4) is False
+    assert blurfilter._pixel_exists(4, 0, 4, 4) is False
 
 
 def test_blurfilter(image2, image2_radius1_weight1, compare_images):

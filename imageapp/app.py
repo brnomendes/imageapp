@@ -13,7 +13,7 @@ class ImageApp:
 
         group = parser.add_mutually_exclusive_group(required=True)
 
-        group.add_argument('--image', metavar='image', help='Help')
+        group.add_argument('--image', metavar='image', help='Shows the available filters for the input image.')
 
         for flag in register.filters:
             filter_args = register.filters[flag].args
