@@ -1,17 +1,11 @@
 Welcome to ImageApp's documentation!
 ====================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
 An app to process images.
 
-References
-==================
+.. toctree::
+    :maxdepth: 2
+    :caption: Contents:
 
-.. automodule:: imageapp.app
-   :members:
-
-.. automodule:: imageapp.processor
-   :members:
+    quick-start
+    references
