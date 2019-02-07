@@ -5,12 +5,13 @@ Welcome to ImageApp's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-Indices and tables
+An app to process images.
+
+References
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
 .. automodule:: imageapp.app
+   :members:
+
+.. automodule:: imageapp.processor
    :members:
