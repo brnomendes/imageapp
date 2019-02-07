@@ -12,6 +12,6 @@ def rgb(image):
     return rgbdecomposition.run(image)
 
 
-@register(name='Rotate Image', types=['RGB'], help='Image rotated according to angle in degrees clockwise around its center')
+@register(name='Rotate Image', types=['RGB'], help='Rotates the input image clockwise according to the angle.')
 def rotate(image, angle_degrees):
     return rotateimage.run(image, int(angle_degrees))
