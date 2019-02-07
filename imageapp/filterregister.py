@@ -4,9 +4,11 @@ import inspect
 class Filter:
 
     def __init__(self, function, name, types, help):
-        self.function = function
-        self.flag = self.function.__name__
-        self.args = list(inspect.signature(self.function).parameters.keys())
+        if function:
+            self.function = function
+            self.flag = self.function.__name__
+            self.args = list(inspect.signature(self.function).parameters.keys())
+
         self.name = name
         self.types = types
         self.help = help
