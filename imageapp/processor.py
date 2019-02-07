@@ -29,6 +29,8 @@ class Processor:
             print('Error')
             exit(1)
 
+        # Some verifications about result struct can be here
+
         print('\nImage file processed successfully!')
         self._save_result(result, file_name)
 

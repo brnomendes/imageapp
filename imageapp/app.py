@@ -9,7 +9,7 @@ class ImageApp:
 
     def start(self):
         parser = argparse.ArgumentParser(
-            description='Processes input images by applying filters.')
+            description='An app to process images.')
 
         group = parser.add_mutually_exclusive_group(required=True)
 
