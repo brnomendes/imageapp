@@ -1,5 +1,13 @@
 # Quick Start
 
+### How to execute ImageApp
+
+
+### How to generate docs
+
+
+### How to execute test
+
 
 ### How to implement new filters
 
