@@ -3,6 +3,13 @@ from .inputprocessor import InputProcessor
 
 
 class Processor:
+    """Select the filter, apply, and then save the result.
+
+    Args:
+        filters: (dict of :py:mod:`str`
+            :py:mod:`imageapp.filterregister.Filter`) -- List of registered
+            filters.
+    """
 
     def __init__(self, filters):
         self.filters = filters
@@ -10,8 +17,18 @@ class Processor:
         self.ip = InputProcessor()
 
     def start(self, flag, args_argparse):
-        if not isinstance(args_argparse, list):
-            args_argparse = [args_argparse]
+        """From the user's arguments, performs the necessary functions.
+
+        Read the image, if necessary, require the
+        :py:mod:`imageapp.inputprocessor.menu` to allow the user to choose the
+        filter, apply the filter and save the result.
+
+        Args:
+            flag (:py:mod:`str`): The flag provided by the user.
+            args_argparse (:py:mod:`list` of :py:mod:`str`): Arguments provided
+                by the user.
+
+        """
 
         file_name = args_argparse[0]
         image = self.im.read_image(file_name)
@@ -29,7 +46,7 @@ class Processor:
             print('Error')
             exit(1)
 
-        # Some verifications about result struct can be here
+        # If needed, some verifications about result struct can be here.
 
         print('\nImage file processed successfully!')
         self._save_result(result, file_name)
@@ -41,5 +58,4 @@ class Processor:
             self.im.write_image(image, name)
 
     def _apply_filter(self, function, image, *args, **kwargs):
-        """ If needed some pre-processing in image """
         return function(image, *args, **kwargs)

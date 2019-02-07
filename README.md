@@ -1,4 +1,4 @@
-# ImageApp  (ESSS Final Task)
+# Quick Start
 
 
 ### How to implement new filters
@@ -38,7 +38,7 @@ optional arguments:
 ```
 
 ```
-$ python main.py --image data/test-image.png 
+$ python main.py --image data/test-image.png
 This is an Image App
 
 Avaliable Filters:

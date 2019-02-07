@@ -1,5 +1,8 @@
 
 class InputProcessor:
+    """Allows the user to select a filter for the input image.
+
+    """
 
     def __init__(self):
         pass

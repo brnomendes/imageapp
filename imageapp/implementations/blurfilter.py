@@ -1,3 +1,7 @@
+"""teste
+
+"""
+
 def run(image, radius, weight):
     image = convolution(image.copy(), image, radius, weight)
 
