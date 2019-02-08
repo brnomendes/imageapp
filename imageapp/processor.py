@@ -11,7 +11,7 @@ class Processor:
 
     Args:
         filters: (:obj:`dict` of :obj:`str:`
-            :py:mod:`imageapp.filterregister.Filter`): List of registered
+            :py:mod:`imageapp.filterregister.Filter`) -- List of registered
             filters.
     """
 
@@ -33,7 +33,6 @@ class Processor:
                 the user.
 
         """
-
         file_name = args_argparse[0]
         image = self.im.read_image(file_name)
 
@@ -47,7 +46,7 @@ class Processor:
             result = self._apply_filter(self.filters[flag].function, image, *args_argparse[1:])
 
         else:
-            print('Error')
+            print('Image mode not compatible with the chosen filter.')
             exit(1)
 
         # If needed, some verifications about result struct can be here.

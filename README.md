@@ -130,6 +130,8 @@ To generate the documentation in html, in the `docs/` directory you run the `Mak
 
 By default, the documentation will be generated in the `docs/_build/` directory
 
+*Note: The code documentation is based on [Google Style Python Docstrings](http://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings)*
+
 ### How to run tests
 
 *Dependencies: [pytest](https://pytest.org/), [numpy](https://www.numpy.org/)*
