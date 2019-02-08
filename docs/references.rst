@@ -10,4 +10,6 @@ References
     imageapp.imagemanipulator
     imageapp.filterregister
     imageapp.filters
-    imageapp.implementations
+    imageapp.implementations.blurfilter
+    imageapp.implementations.rgbdecomposition
+    imageapp.implementations.rotateimage

@@ -20,7 +20,7 @@ class Processor:
         """From the user's arguments, performs the necessary functions.
 
         Read the image, if necessary, require the
-        :py:mod:`imageapp.inputprocessor.menu` to allow the user to choose the
+        :py:mod:`imageapp.inputprocessor.menu` to allow the user to choose a
         filter, apply the filter and save the result.
 
         Args:

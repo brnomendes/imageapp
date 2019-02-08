@@ -18,8 +18,8 @@ class ImageApp:
         The argparse is started with the --image argument, which displays to
         the user a menu with the filters available for the input image.
 
-        For each filter registered in :py:mod:`imageapp.filters`, a new argument
-        is added to argparse.
+        For each filter registered in :py:mod:`imageapp.filters`, a new
+        argument is added to argparse.
         """
         parser = argparse.ArgumentParser(
             description='An app to process images.')
