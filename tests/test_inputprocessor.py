@@ -26,8 +26,8 @@ def test_choice_a_filter(input_processor):
     possibles = [f1, f2]
 
     with mock.patch('builtins.input', side_effect=[1, 2]):
-        index = input_processor._choice_a_filter(possibles)
-        assert possibles[index].name == 'F1'
+        filter = input_processor._choice_a_filter(possibles)
+        assert filter.name == 'F1'
 
-        index = input_processor._choice_a_filter(possibles)
-        assert possibles[index].name == 'F2'
+        filter = input_processor._choice_a_filter(possibles)
+        assert filter.name == 'F2'
