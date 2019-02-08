@@ -1,0 +1,24 @@
+imageapp.filters
+================
+
+.. automodule:: imageapp.filters
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      blur
+      rgb
+      rotate
+   
+   
+
+   
+   
+   
+
+   
+   
+   

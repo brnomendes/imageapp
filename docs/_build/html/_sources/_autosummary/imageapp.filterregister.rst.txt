@@ -1,0 +1,29 @@
+imageapp.filterregister
+=======================
+
+.. automodule:: imageapp.filterregister
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+   
+      register
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      Filter
+      FilterRegister
+   
+   
+
+   
+   
+   
