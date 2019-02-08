@@ -44,7 +44,7 @@ def run(image, angle):
     return {f'rotate{angle}': image.rotate(angle)}
 ```
 
-In this case, the filter generates only one image, so the dictionary has only one value. The key to the image is `rotate<angle>`. The key name is important because it will be used as a complement to the result file name. For example for the `/paht/to/image.xyz` image and `result` complement, the name of the resulting image will be `/paht/to/image-result.xyz`.
+In this case, the filter generates only one image, so the dictionary has only one value. The key to the image is `rotate<angle>`. The key name is important because it will be used as a complement to the result file name. For example, for the `/paht/to/image.xyz` image and `result` complement, the name of the resulting image will be `/paht/to/image-result.xyz`.
 
 Once the filter implementation is complete, it must be registered to `imageapp/filters.py` to be available to users. For this you must create a function that receives as the first argument the image, and optionally other arguments (all as string), then returns the result of implementation. Important point for names:
  - The function name will be used as the flag for the command line.
