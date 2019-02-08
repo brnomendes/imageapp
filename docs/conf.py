@@ -46,6 +46,7 @@ extensions = [
     'recommonmark',
 ]
 
+napoleon_include_private_with_doc = True
 autodoc_default_flags = ['members']
 autosummary_generate = True
 

@@ -13,10 +13,10 @@ class ImageApp:
     """
 
     def start(self):
-        """Create argparse and start :py:mod:`imageapp.processor.Processor`.
+        """Create argparse and start a :py:mod:`imageapp.processor.Processor`.
 
-        The argparse is started with the --image argument, which displays to
-        the user a menu with the filters available for the input image.
+        The argparse is started with the ``--image`` argument, which displays
+        to the user a menu with the filters available for the input image.
 
         For each filter registered in :py:mod:`imageapp.filters`, a new
         argument is added to argparse.
