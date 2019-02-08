@@ -127,7 +127,7 @@ To generate the documentation in html, in the `docs/` directory you run the `Mak
 (venv) docs/ $ make html
 ```
 
-By default, the documentation will be generated from the `docs/_build/` directory
+By default, the documentation will be generated in the `docs/_build/` directory
 
 ### How to run tests
 
