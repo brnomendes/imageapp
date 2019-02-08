@@ -104,7 +104,37 @@ Saving data/test-image-rotate45.png...
 
 ## Development: Docs and Tests
 
+To generate the documentation and run the tests it's recommended to create a virtual environment Python, for example with [virtualenv](https://virtualenv.pypa.io/):
+
+```bash
+$ virtualenv venv -p python3
+$ source venv/bin/activate
+```
+
+Then install the required dependencies with the [pip](https://pypi.org/project/pip/) and the `setup.py` module:
+
+```bash
+(venv) $ pip install -e .
+```
+
 ### How to generate docs
 
+*Dependencies: [sphinx](http://www.sphinx-doc.org/), [recommonmark](https://recommonmark.readthedocs.io/)*
 
-### How to execute tests
+To generate the documentation in html, in the `docs/` directory you run the `Makefile`:
+
+```bash
+(venv) docs/ $ make html
+```
+
+By default, the documentation will be generated from the `docs/_build/` directory
+
+### How to run tests
+
+*Dependencies: [pytest](https://pytest.org/), [numpy](https://www.numpy.org/)*
+
+To run the tests, you should only run `pytest` at the root of the project:
+
+```bash
+(venv) $ pytest
+```
