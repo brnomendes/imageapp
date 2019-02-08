@@ -84,7 +84,7 @@ class Processor:
                 filter.
 
         Returns:
-            (:obj:`dict` of :obj:`str:` :py:mod:`PIL.Image`): Dictionary with
+            :obj:`dict` of :obj:`str:` :py:mod:`PIL.Image`: Dictionary with
             result images.
         """
         return function(image, *args, **kwargs)

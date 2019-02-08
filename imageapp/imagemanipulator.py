@@ -15,7 +15,7 @@ class ImageManipulator:
             file_name (:obj:`str`): Path of the image to be read.
 
         Returns:
-            (:py:mod:`PIL.Image`): Image that was read.
+            :py:mod:`PIL.Image`: Image that was read.
         """
         return Image.open(file_name)
 
@@ -41,7 +41,7 @@ class ImageManipulator:
                 of the image.
 
         Returns:
-            (:obj:`str`): File name of the image with the complement.
+            :obj:`str`: File name of the image with the complement.
         """
         name_split = file_name.split('.')
         return f'{".".join(name_split[:-1])}-{complement}.{name_split[-1]}'

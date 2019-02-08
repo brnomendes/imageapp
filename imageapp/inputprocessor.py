@@ -22,7 +22,7 @@ class InputProcessor:
             image_mode (:obj:`str`): Image mode type.
 
         Returns:
-            (:obj:`function`, :obj:`dict` of :obj:`str:`:obj:`str`): Function
+            :obj:`function`, :obj:`dict` of :obj:`str:`:obj:`str`: Function
             of the chosen filter and a dictionary with the arguments provided
             by the user.
 
@@ -56,7 +56,7 @@ class InputProcessor:
                 filters.
 
         Returns:
-            (:py:mod:`imageapp.filterregister.Filter`): Filter chosen by the
+            :py:mod:`imageapp.filterregister.Filter`: Filter chosen by the
             user.
         """
         print('Avaliable Filters:')
@@ -83,7 +83,7 @@ class InputProcessor:
                 in which you will be asked the necessary arguments.
 
         Returns:
-            (:obj:`dict` of :obj:`str:`:obj:`str`): Dictionary of user
+            :obj:`dict` of :obj:`str:`:obj:`str`: Dictionary of user
             arguments for the chosen filter.
         """
         kwargs = {}
