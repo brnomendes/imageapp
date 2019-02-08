@@ -1,0 +1,218 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>imageapp.filterregister &#8212; ImageApp 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="imageapp.filters" href="imageapp.filters.html" />
+    <link rel="prev" title="imageapp.imagemanipulator" href="imageapp.imagemanipulator.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-imageapp.filterregister">
+<span id="imageapp-filterregister"></span><h1>imageapp.filterregister<a class="headerlink" href="#module-imageapp.filterregister" title="Permalink to this headline">¶</a></h1>
+<p class="rubric">Functions</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#imageapp.filterregister.register" title="imageapp.filterregister.register"><code class="xref py py-obj docutils literal notranslate"><span class="pre">register</span></code></a>(name,&nbsp;types[,&nbsp;help])</td>
+<td>An instance of the decorator that will register the filters.</td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Classes</p>
+<table border="1" class="longtable docutils">
+<colgroup>
+<col width="10%" />
+<col width="90%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td><a class="reference internal" href="#imageapp.filterregister.Filter" title="imageapp.filterregister.Filter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">Filter</span></code></a>(function,&nbsp;name,&nbsp;types,&nbsp;help)</td>
+<td>Model of a filter register.</td>
+</tr>
+<tr class="row-even"><td><a class="reference internal" href="#imageapp.filterregister.FilterRegister" title="imageapp.filterregister.FilterRegister"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FilterRegister</span></code></a></td>
+<td>Class that creates a register decorator.</td>
+</tr>
+</tbody>
+</table>
+<dl class="class">
+<dt id="imageapp.filterregister.Filter">
+<em class="property">class </em><code class="descclassname">imageapp.filterregister.</code><code class="descname">Filter</code><span class="sig-paren">(</span><em>function</em>, <em>name</em>, <em>types</em>, <em>help</em><span class="sig-paren">)</span><a class="headerlink" href="#imageapp.filterregister.Filter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Model of a filter register.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>function</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">function</span></code>) – Function to be registered.</li>
+<li><strong>name</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Name of the filter that will be displayed in the
+menu.</li>
+<li><strong>types</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code> of <code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Types of image mode that the filter
+supports.</li>
+<li><strong>help</strong> (<code class="xref py py-obj docutils literal notranslate"><span class="pre">str</span></code>) – Message that will be displayed in the command line
+help.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="class">
+<dt id="imageapp.filterregister.FilterRegister">
+<em class="property">class </em><code class="descclassname">imageapp.filterregister.</code><code class="descname">FilterRegister</code><a class="headerlink" href="#imageapp.filterregister.FilterRegister" title="Permalink to this definition">¶</a></dt>
+<dd><p>Class that creates a register decorator.</p>
+<dl class="method">
+<dt id="imageapp.filterregister.FilterRegister._filter_register">
+<code class="descname">_filter_register</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#imageapp.filterregister.FilterRegister._filter_register" title="Permalink to this definition">¶</a></dt>
+<dd><p>This function creates an empty dictionary and a decorator, every
+decorated function will be added to the dictionary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Decorator that register filters.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">function</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="imageapp.filterregister.FilterRegister.get_register">
+<code class="descname">get_register</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#imageapp.filterregister.FilterRegister.get_register" title="Permalink to this definition">¶</a></dt>
+<dd><p>Instance a new decorator to register filters.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Decorator that register filters.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><code class="xref py py-obj docutils literal notranslate"><span class="pre">function</span></code></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="imageapp.filterregister.register">
+<code class="descclassname">imageapp.filterregister.</code><code class="descname">register</code><span class="sig-paren">(</span><em>name</em>, <em>types</em>, <em>help=None</em><span class="sig-paren">)</span><a class="headerlink" href="#imageapp.filterregister.register" title="Permalink to this definition">¶</a></dt>
+<dd><p>An instance of the decorator that will register the filters.</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">ImageApp</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../README.html">Quick Start</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../references.html">References</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="imageapp.app.html">imageapp.app</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imageapp.processor.html">imageapp.processor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imageapp.inputprocessor.html">imageapp.inputprocessor</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imageapp.imagemanipulator.html">imageapp.imagemanipulator</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">imageapp.filterregister</a></li>
+<li class="toctree-l2"><a class="reference internal" href="imageapp.filters.html">imageapp.filters</a></li>
+</ul>
+</li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  <li><a href="../references.html">References</a><ul>
+      <li>Previous: <a href="imageapp.imagemanipulator.html" title="previous chapter">imageapp.imagemanipulator</a></li>
+      <li>Next: <a href="imageapp.filters.html" title="next chapter">imageapp.filters</a></li>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    </div>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2019, Bruno Mendes.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.8.4</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/_autosummary/imageapp.filterregister.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

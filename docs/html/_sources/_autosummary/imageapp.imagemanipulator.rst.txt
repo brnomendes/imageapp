@@ -1,0 +1,22 @@
+imageapp.imagemanipulator
+=========================
+
+.. automodule:: imageapp.imagemanipulator
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+   
+      ImageManipulator
+   
+   
+
+   
+   
+   
