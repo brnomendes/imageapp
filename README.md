@@ -2,11 +2,31 @@
 
 ### How to execute ImageApp
 
+To run the application you need the [Pillow](https://pillow.readthedocs.io/) library and it's recommended to have Python 3.6+.
 
-### How to generate docs
+To display the help menu with the list of available filters you can run the following command:
+```bash
+$ python main.py --help
+```
 
+To run, for example, the `RGB Decomposition` filter, you need to pass the filter flag and the necessary arguments, in this case only the image that will be used:
+```bash
+$ python main.py --rgb /paht/to/image.xyz
+```
 
-### How to execute test
+Using the `--image` flag, providing the image as an argument, a menu will be displayed with the available filters according to the [image mode](https://pillow.readthedocs.io/en/stable/handbook/concepts.html#concept-modes):
+
+```bash
+$ python main.py --image /paht/to/image.xyz
+This is an Image App
+
+Avaliable Filters:
+1 - Blur
+2 - RGB Split
+3 - Rotate Image
+
+Type the selected filter number: 
+```
 
 
 ### How to implement new filters
@@ -62,3 +82,8 @@ Processing...
 Image file processed successfully!
 Saving data/test-image-rotate45.png...
 ```
+
+### How to generate docs
+
+
+### How to execute test
