@@ -1,7 +1,7 @@
 import numpy as np
 from PIL import Image
 
-from imageapp.implementations import rotateimage
+from app.implementations import rotateimage
 
 
 def test_rotateimage(image2, compare_images):

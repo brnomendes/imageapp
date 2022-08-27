@@ -4,9 +4,9 @@ References
 .. autosummary::
     :toctree: _autosummary
 
-    imageapp.app
-    imageapp.processor
-    imageapp.inputprocessor
-    imageapp.imagemanipulator
-    imageapp.filterregister
-    imageapp.filters
+    app.app
+    app.processor
+    app.inputprocessor
+    app.imagemanipulator
+    app.filterregister
+    app.filters

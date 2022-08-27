@@ -1,8 +1,8 @@
 import pytest
 from unittest import mock
 
-from imageapp.inputprocessor import InputProcessor
-from imageapp.filterregister import Filter
+from app.inputprocessor import InputProcessor
+from app.filterregister import Filter
 
 
 @pytest.fixture

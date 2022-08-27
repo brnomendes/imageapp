@@ -17,7 +17,7 @@ class InputProcessor:
 
         Args:
             filters: (:obj:`dict` of :obj:`str:`
-                :py:mod:`imageapp.filterregister.Filter`) -- List of registered
+                :py:mod:`app.filterregister.Filter`) -- List of registered
                 filters.
             image_mode (:obj:`str`): Image mode type.
 
@@ -52,11 +52,11 @@ class InputProcessor:
 
         Args:
             possibles: (:obj:`dict` of :obj:`str:`
-                :py:mod:`imageapp.filterregister.Filter`) -- List of compatible
+                :py:mod:`app.filterregister.Filter`) -- List of compatible
                 filters.
 
         Returns:
-            :py:mod:`imageapp.filterregister.Filter`: Filter chosen by the
+            :py:mod:`app.filterregister.Filter`: Filter chosen by the
             user.
         """
         print('Avaliable Filters:')
@@ -79,7 +79,7 @@ class InputProcessor:
         the value.
 
         Args:
-            filter (:py:mod:`imageapp.filterregister.Filter`): Filter chosen,
+            filter (:py:mod:`app.filterregister.Filter`): Filter chosen,
                 in which you will be asked the necessary arguments.
 
         Returns:

@@ -1,5 +1,5 @@
 import pytest
-from imageapp.imagemanipulator import ImageManipulator
+from app.imagemanipulator import ImageManipulator
 
 
 @pytest.fixture

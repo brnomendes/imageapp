@@ -2,7 +2,7 @@ import numpy as np
 import pytest
 
 from PIL import Image
-from imageapp.implementations import blurfilter
+from app.implementations import blurfilter
 
 
 @pytest.fixture

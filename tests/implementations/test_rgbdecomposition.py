@@ -1,5 +1,5 @@
 from PIL import Image
-from imageapp.implementations import rgbdecomposition
+from app.implementations import rgbdecomposition
 
 
 def test_image_with_one_chanel(image, compare_images):

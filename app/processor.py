@@ -11,7 +11,7 @@ class Processor:
 
     Args:
         filters: (:obj:`dict` of :obj:`str:`
-            :py:mod:`imageapp.filterregister.Filter`) -- List of registered
+            :py:mod:`app.filterregister.Filter`) -- List of registered
             filters.
     """
 
@@ -24,7 +24,7 @@ class Processor:
         """From the user's arguments, performs the necessary functions.
 
         Read the image, if necessary, require the
-        :py:mod:`imageapp.inputprocessor.menu` to allow the user to choose a
+        :py:mod:`app.inputprocessor.menu` to allow the user to choose a
         filter, then apply the filter and save the result.
 
         Args:

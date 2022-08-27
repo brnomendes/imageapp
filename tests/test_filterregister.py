@@ -1,6 +1,6 @@
 import pytest
 
-from imageapp.filterregister import Filter, FilterRegister
+from app.filterregister import Filter, FilterRegister
 
 
 @pytest.fixture
