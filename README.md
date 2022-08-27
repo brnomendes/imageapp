@@ -1,3 +1,5 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=brnomendes_imageapp&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=brnomendes_imageapp) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=brnomendes_imageapp&metric=coverage)](https://sonarcloud.io/summary/new_code?id=brnomendes_imageapp)
+
 # Quick Start
 
 ### How to execute ImageApp
