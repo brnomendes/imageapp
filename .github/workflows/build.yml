@@ -21,8 +21,6 @@ jobs:
         run: pip install -r requirements.txt
       - name: Run pytest
         run: pytest
-      - name: Run converage
-        run: coverage xml -i
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
