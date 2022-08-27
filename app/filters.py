@@ -1,8 +1,8 @@
-from .implementations import blurfilter, rgbdecomposition, rotateimage
 from .filterregister import register
+from .implementations import blurfilter, rgbdecomposition, rotateimage
 
 
-@register(name='Blur', types=['RGB'])
+@register(name="Blur", types=["RGB"])
 def blur(image, radius, weight):
     """This filter applies a blur to an image.
 
@@ -14,7 +14,7 @@ def blur(image, radius, weight):
     return blurfilter.run(image, int(radius), int(weight))
 
 
-@register(name='RGB Split', types=['RGB'])
+@register(name="RGB Split", types=["RGB"])
 def rgb(image):
     """Decomposes an RGB image into three images, each with values on only
     one channel.
@@ -25,7 +25,7 @@ def rgb(image):
     return rgbdecomposition.run(image)
 
 
-@register(name='Rotate Image', types=['RGB'], help='Rotates the input image clockwise according to the angle.')
+@register(name="Rotate Image", types=["RGB"], help="Rotates the input image clockwise according to the angle.")
 def rotate(image, angle_degrees):
     """Rotates the input image clockwise according to the angle.
 

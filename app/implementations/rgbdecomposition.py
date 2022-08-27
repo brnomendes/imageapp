@@ -1,7 +1,7 @@
 def run(image):
     result = {}
 
-    for channel, color in enumerate(['red', 'green', 'blue']):
+    for channel, color in enumerate(["red", "green", "blue"]):
         image_color = _image_with_one_chanel(image.copy(), channel)
         result[color] = image_color
 

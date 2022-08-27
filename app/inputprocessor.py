@@ -1,4 +1,3 @@
-
 class InputProcessor:
     """Allows the user to select a filter for the input image.
 
@@ -17,7 +16,7 @@ class InputProcessor:
 
         Args:
             filters: (:obj:`dict` of :obj:`str:`
-                :py:mod:`imageapp.filterregister.Filter`) -- List of registered
+                :py:mod:`app.filterregister.Filter`) -- List of registered
                 filters.
             image_mode (:obj:`str`): Image mode type.
 
@@ -27,18 +26,17 @@ class InputProcessor:
             by the user.
 
         """
-        print('This is an Image App\n')
+        print("This is an Image App\n")
 
-        possibles = [filters[flag] for flag in filters
-                     if image_mode in filters[flag].types]
+        possibles = [filters[flag] for flag in filters if image_mode in filters[flag].types]
 
         if not possibles:
-            print('Not avaliable filters')
+            print("Not avaliable filters")
             exit(0)
 
         filter = self._choice_a_filter(possibles)
 
-        print(f'\nSelected Filter: {filter.name}\n')
+        print(f"\nSelected Filter: {filter.name}\n")
 
         kwargs = self._get_filter_args(filter)
 
@@ -52,21 +50,21 @@ class InputProcessor:
 
         Args:
             possibles: (:obj:`dict` of :obj:`str:`
-                :py:mod:`imageapp.filterregister.Filter`) -- List of compatible
+                :py:mod:`app.filterregister.Filter`) -- List of compatible
                 filters.
 
         Returns:
-            :py:mod:`imageapp.filterregister.Filter`: Filter chosen by the
+            :py:mod:`app.filterregister.Filter`: Filter chosen by the
             user.
         """
-        print('Avaliable Filters:')
+        print("Avaliable Filters:")
         for i, filter in enumerate(possibles):
-            print(f'{i+1} - {filter.name}')
+            print(f"{i+1} - {filter.name}")
 
         option = 0
         while option <= 0 or option > len(possibles):
             try:
-                option = int(input('\nType the selected filter number: '))
+                option = int(input("\nType the selected filter number: "))
             except ValueError:
                 continue
 
@@ -79,7 +77,7 @@ class InputProcessor:
         the value.
 
         Args:
-            filter (:py:mod:`imageapp.filterregister.Filter`): Filter chosen,
+            filter (:py:mod:`app.filterregister.Filter`): Filter chosen,
                 in which you will be asked the necessary arguments.
 
         Returns:

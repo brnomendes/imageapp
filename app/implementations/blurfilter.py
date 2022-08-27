@@ -1,7 +1,7 @@
 def run(image, radius, weight):
     image = convolution(image.copy(), image, radius, weight)
 
-    return {f'blur-radius{radius}-weight{weight}': image}
+    return {f"blur-radius{radius}-weight{weight}": image}
 
 
 def convolution(image, original_image, radius, weight):

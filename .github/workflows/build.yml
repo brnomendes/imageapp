@@ -19,10 +19,27 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Install requirements
         run: pip install -r requirements.txt
+      - name: Check isort
+        run: poetry run isort --check-only app/ tests/
+      - name: Check black
+        run: poetry run black --check app/ tests/
+      - name: Check mypy
+        run: poetry run mypy app/ tests/
+      - name: Check xenon app
+        run: poetry run xenon app/ --max-absolute B --max-modules C --max-average A
+      - name: Check xenon tests
+        run: poetry run xenon tests/ --no-assert --max-absolute B --max-modules C --max-average A
+      - name: Check bandit app
+        run: poetry run bandit -q -r app/
+      - name: Check bandit tests
+        run: poetry run bandit -s=B101 -q -r tests/
       - name: Run pytest
         run: pytest
       - name: Run converage
-        run: coverage xml -i
+        run: coverage xml
+      - name: fix code coverage paths
+        run: |
+          sed -i 's/\/home\/runner\/work\/imageapp\/imageapp\//\/github\/workspace\//g' coverage.xml
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:

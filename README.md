@@ -33,13 +33,13 @@ Type the selected filter number:
 
 ### How to implement new filters
 
-The implementation of a new filter is completed in only two steps. First, you must create a module where you will implement the filter. This module should be located in the `imageapp/implementations/` directory. You can implement the module as you want, with classes or only functions.
+The implementation of a new filter is completed in only two steps. First, you must create a module where you will implement the filter. This module should be located in the `app/implementations/` directory. You can implement the module as you want, with classes or only functions.
 
 The input to your module will be a [Pillow image](https://pillow.readthedocs.io/en/stable/reference/Image.html#module-PIL.Image) and optionally the arguments.
 
 The output (result) must be a dictionary with the key as a string and values as a [Pillow image](https://pillow.readthedocs.io/en/stable/reference/Image.html#module-PIL.Image).
 
-Let's take as an example a filter that rotates an image. The module will be created in `imageapp/implementations/rotateimage.py`. Besides the image it will receive as an argument an angle in degrees:
+Let's take as an example a filter that rotates an image. The module will be created in `app/implementations/rotateimage.py`. Besides the image it will receive as an argument an angle in degrees:
 
 ```python
 def run(image, angle):
@@ -48,7 +48,7 @@ def run(image, angle):
 
 In this case, the filter generates only one image, so the dictionary has only one value. The key to the image is `rotate<angle>`. The key name is important because it will be used as a complement to the result file name. For example, for the `/paht/to/image.xyz` image and `result` complement, the name of the resulting image will be `/paht/to/image-result.xyz`.
 
-Once the filter implementation is complete, it must be registered in `imageapp/filters.py` to be available to users. For this you must create a function that receives as the first argument the image, and optionally other arguments (all as string), then returns the result of implementation. Important point for names:
+Once the filter implementation is complete, it must be registered in `app/filters.py` to be available to users. For this you must create a function that receives as the first argument the image, and optionally other arguments (all as string), then returns the result of implementation. Important point for names:
  - The function name will be used as the flag for the command line.
  - The name of the arguments will be used as the name for command line arguments and for the interactive menu. If you use underline in the argument name, the interactive menu will display it as space.
 
