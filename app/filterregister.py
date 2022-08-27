@@ -46,7 +46,6 @@ class FilterRegister:
         filters = {}
 
         def _register_decorator(name, types, help=None):
-
             def _wrapper(function):
                 filters[function.__name__] = Filter(function, name, types, help)
                 return function

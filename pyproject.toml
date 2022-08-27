@@ -2,3 +2,17 @@
 pythonpath = ["app"]
 addopts = "--junitxml=junittest.xml --cov app/ --cov-report xml --cov-report term:skip-covered --cov-branch"
 testpaths = ["tests"]
+
+[tool.mypy]
+ignore_missing_imports = "False"
+
+[tool.pylint.messages_control]
+disable = ["C0114", "C0115", "C0116", "C0301", "R0903", "W1203"]
+extension-pkg-whitelist = ["pydantic"]
+
+[tool.black]
+line-length = 120
+
+[tool.isort]
+profile = "black"
+line_length = 120

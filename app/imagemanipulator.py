@@ -43,5 +43,5 @@ class ImageManipulator:
         Returns:
             :obj:`str`: File name of the image with the complement.
         """
-        name_split = file_name.split('.')
+        name_split = file_name.split(".")
         return f'{".".join(name_split[:-1])}-{complement}.{name_split[-1]}'

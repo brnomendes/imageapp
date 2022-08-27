@@ -15,33 +15,34 @@ def register(filter_register):
 
 @pytest.fixture
 def filters(register):
-    @register(name='Filter', types=['RGB'], help='Some Help')
+    @register(name="Filter", types=["RGB"], help="Some Help")
     def sample_filter(image, x, y, z):
         pass
+
     return register.filters
 
 
 def test_register_filter(filters):
     assert len(filters) == 1
-    assert 'sample_filter' in filters
-    assert isinstance(filters['sample_filter'], Filter)
+    assert "sample_filter" in filters
+    assert isinstance(filters["sample_filter"], Filter)
 
 
 def test_register_filter_flag(filters):
-    assert filters['sample_filter'].flag == 'sample_filter'
+    assert filters["sample_filter"].flag == "sample_filter"
 
 
 def test_register_filter_name(filters):
-    assert filters['sample_filter'].name == 'Filter'
+    assert filters["sample_filter"].name == "Filter"
 
 
 def test_register_filter_types(filters):
-    assert filters['sample_filter'].types == ['RGB']
+    assert filters["sample_filter"].types == ["RGB"]
 
 
 def test_register_filter_help(filters):
-    assert filters['sample_filter'].help == 'Some Help'
+    assert filters["sample_filter"].help == "Some Help"
 
 
 def test_register_filter_args(filters):
-    assert filters['sample_filter'].args == ['image', 'x', 'y', 'z']
+    assert filters["sample_filter"].args == ["image", "x", "y", "z"]

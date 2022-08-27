@@ -1,4 +1,5 @@
 import pytest
+
 from app.imagemanipulator import ImageManipulator
 
 
@@ -8,6 +9,6 @@ def img_manipulator():
 
 
 def test_gen_file_name(img_manipulator):
-    file_name = '/x/y/test.gen.jpg'
-    complement = 'filter'
-    assert img_manipulator.gen_file_name(file_name, complement) == '/x/y/test.gen-filter.jpg'
+    file_name = "/x/y/test.gen.jpg"
+    complement = "filter"
+    assert img_manipulator.gen_file_name(file_name, complement) == "/x/y/test.gen-filter.jpg"

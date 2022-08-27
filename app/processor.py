@@ -36,22 +36,22 @@ class Processor:
         file_name = args_argparse[0]
         image = self.im.read_image(file_name)
 
-        if flag == 'image':
+        if flag == "image":
             filter, kwargs = self.ip.menu(self.filters, image.mode)
-            print('Processing...')
+            print("Processing...")
             result = self._apply_filter(filter.function, image, **kwargs)
 
         elif image.mode in self.filters[flag].types:
-            print('Processing...')
+            print("Processing...")
             result = self._apply_filter(self.filters[flag].function, image, *args_argparse[1:])
 
         else:
-            print('Image mode not compatible with the chosen filter.')
+            print("Image mode not compatible with the chosen filter.")
             exit(1)
 
         # If needed, some verifications about result struct can be here.
 
-        print('\nImage file processed successfully!')
+        print("\nImage file processed successfully!")
         self._save_result(result, file_name)
 
     def _save_result(self, result, file_name):
@@ -67,7 +67,7 @@ class Processor:
         """
         for complement, image in result.items():
             name = self.im.gen_file_name(file_name, complement)
-            print(f'Saving {name}...')
+            print(f"Saving {name}...")
             self.im.write_image(image, name)
 
     def _apply_filter(self, function, image, *args, **kwargs):
