@@ -37,9 +37,9 @@ class Processor:
         image = self.im.read_image(file_name)
 
         if flag == "image":
-            filter, kwargs = self.ip.menu(self.filters, image.mode)
+            filter_func, kwargs = self.ip.menu(self.filters, image.mode)
             print("Processing...")
-            result = self._apply_filter(filter.function, image, **kwargs)
+            result = self._apply_filter(filter_func.function, image, **kwargs)
 
         elif image.mode in self.filters[flag].types:
             print("Processing...")
