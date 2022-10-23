@@ -34,13 +34,13 @@ class InputProcessor:
             print("Not avaliable filters")
             exit(0)
 
-        filter = self._choice_a_filter(possibles)
+        filter_func = self._choice_a_filter(possibles)
 
-        print(f"\nSelected Filter: {filter.name}\n")
+        print(f"\nSelected Filter: {filter_func.name}\n")
 
-        kwargs = self._get_filter_args(filter)
+        kwargs = self._get_filter_args(filter_func)
 
-        return filter, kwargs
+        return filter_func, kwargs
 
     def _choice_a_filter(self, possibles):
         """Allows the user to choose a filter compatible with the input image.
