@@ -11,19 +11,19 @@ def convolution(image, original_image, radius, weight):
         for y in range(height):
             pixel = list(image.getpixel((x, y)))
             for c, _ in enumerate(image.getbands()):
-                sum = 0
+                pixel_sum = 0
                 count = 0
                 for j in range(-radius, radius + 1):
                     for k in range(-radius, radius + 1):
                         if _pixel_exists(x + j, y + k, width, height):
                             value = original_image.getpixel((x + j, y + k))[c]
                             if j == 0 and k == 0:
-                                sum = sum + (value * weight)
+                                pixel_sum += (value * weight)
                                 count = count + weight
                             else:
-                                sum = sum + value
+                                pixel_sum += value
                                 count = count + 1
-                pixel[c] = int(sum / count)
+                pixel[c] = int(pixel_sum / count)
             image.putpixel((x, y), tuple(pixel))
 
     return image
